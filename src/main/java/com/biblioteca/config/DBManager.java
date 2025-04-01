@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public  class DBManager {
 
   private static final String URL= "jdbc:postgresql://localhost:5432/LibraryDB";
-    private static final String USER ="equipo3";
+    private static final String USER ="postgres";
     private static final String PASS ="equipo3";
   
 

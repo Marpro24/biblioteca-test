@@ -7,7 +7,6 @@ public class Book {
   private String author;
   private String description;
   private int isbn;
-  private boolean isRented;
 
   public Book(String title, String genre, String author, String description, int isbn){
     this.title = title;
@@ -15,7 +14,6 @@ public class Book {
     this.genre = genre;
     this.description = description;
     this.isbn = isbn;
-    this.isRented = false;   
 
   }
 // getters y setters para acceder a las propiedades
@@ -69,12 +67,5 @@ public class Book {
   }
 
 
-  public boolean getIsRented() {
-    return this.isRented;
-  }
-
-  public void setIsRented(boolean isRented) {
-    this.isRented = isRented;
-  }
 
 }

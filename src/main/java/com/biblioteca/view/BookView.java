@@ -18,12 +18,12 @@ public class BookView {
     System.out.println("Ingresa un autor");
     String author = scanner.nextLine();
     System.out.println("Ingresa el ISBN");
-    String isbn = scanner.nextInt();
+    int isbn = scanner.nextInt();
     System.out.println("Ingresa descripción del libro");
-    String descripcion = scanner.nextLine();
+    String description = scanner.nextLine();
     System.out.println("Ingresa género del libro");
-    String genero = scanner.nextLine();
-    Book book = new Book(title, author, isbn, descripcion, genero);
+    String genre = scanner.nextLine();
+    Book book = new Book(title, genre, author, description, isbn );
     bookController.createBook(book);
     scanner.close();
     
