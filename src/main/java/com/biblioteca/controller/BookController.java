@@ -8,10 +8,10 @@ public class BookController {
 //BookDAO bookDAO = new BookDAO(); para poder acceder a los metodos createBook del BookDao y que me devuelva algo y yo desde el controller le paso a la vista
 //pero no hacemos esto lol, porque D de SOLID
 
-BookDAO bookDAO;
+private BookDAO bookDAO;
 //cada vez que creemos un controlador tenemos que crear un dao de esa clase
 public BookController(BookDAO bookDAO){
-  this.bookDAO = new BookDAO();
+  this.bookDAO = bookDAO;
 }
 
 public void createBook(Book book){ 

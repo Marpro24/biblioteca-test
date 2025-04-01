@@ -23,8 +23,10 @@ public class BookView {
     String description = scanner.nextLine();
     System.out.println("Ingresa género del libro");
     String genre = scanner.nextLine();
+   
     Book book = new Book(title, genre, author, description, isbn );
     bookController.createBook(book);
+   
     scanner.close();
     
   }

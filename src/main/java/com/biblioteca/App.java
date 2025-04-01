@@ -1,7 +1,6 @@
 package com.biblioteca;
 
 import com.biblioteca.controller.BookController;
-import com.biblioteca.model.Book;
 import com.biblioteca.model.BookDAO;
 import com.biblioteca.view.BookView;
 
@@ -27,15 +26,15 @@ public class App
         //model.createBook(item);
         //y con esto se debería crear un item nuevo en postgress
         //para instanciar al controlador
-        Book item = new Book("Jazz", "fiction", "ToniMorrison", "blsbls", 154775);
-        System.out.println(item);
+      //  Book item = new Book("Jazz", "fiction", "ToniMorrison", "blsbls", 154775);
+       // System.out.println(item);
         //esto esta mal porque no lo ponemos a chapa así aquí, hacemos una vista para que el cliente pueda introducir la info directamente
        /* BookDAO model = new BookDAO();
         BookController bookController = new BookController(model);
         bookController.createBook((item)); */
 
-        BookDAO model = new BookDAO();
-        BookController bookController = new BookController(model);
+        BookDAO bookDAO = new BookDAO();
+        BookController bookController = new BookController(bookDAO);
         BookView bookView = new BookView(bookController);
 
         bookView.createBook();
