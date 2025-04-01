@@ -11,7 +11,7 @@ public class BookController {
 BookDAO bookDAO;
 //cada vez que creemos un controlador tenemos que crear un dao de esa clase
 public BookController(BookDAO bookDAO){
-  this.bookDAO = bookDAO;
+  this.bookDAO = new BookDAO();
 }
 
 public void createBook(Book book){ 
