@@ -6,7 +6,6 @@ import com.biblioteca.controller.BookController;
 import com.biblioteca.model.Book;
 import com.biblioteca.model.BookDAO;
 import com.biblioteca.view.BookView;
-
 public class App 
 {
     public static void main( String[] args )
@@ -16,10 +15,13 @@ public class App
         BookController bookController = new BookController(bookDAO);
         BookView bookView = new BookView(bookController);
 
+        bookView.showMenu();
         bookView.createBook();
         bookView.findBookByTitle();
         bookView.updateBook();
         bookView.deleteBook();
+        bookView.findBookByAuthor();
+        bookView.findBookByGenre();
         List<Book> books = bookController.getAllBooks();
         bookView.displayBooks(books);
 
