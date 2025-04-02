@@ -13,8 +13,8 @@ public class App
         BookController bookController = new BookController(bookDAO);
         BookView bookView = new BookView(bookController);
 
-        bookView.createBook();
-
+        //bookView.createBook();
+        bookView.updateBook();
         
     }
 }

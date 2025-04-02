@@ -10,9 +10,12 @@ public BookController(BookDAO bookDAO){
   this.bookDAO = bookDAO;
 }
 
-public void createBook(Book book){ 
+/*public void createBook(Book book){ 
   bookDAO.createBook(book);
-}
+}*/
 
+public void updateBook(Book book){
+  bookDAO.updateBook(book);
+  }
 
 }
