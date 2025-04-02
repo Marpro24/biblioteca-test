@@ -23,6 +23,9 @@ public class BookView {
         System.out.println("3. Buscar un libro por título");
         System.out.println("4. Eliminar un libro");
         System.out.println("5. Salir");
+        System.out.println("6. Buscar un libro por autor");
+        System.out.println("7. EBuscar un libro por genero");
+        System.out.println("8. Salir");
         System.out.print("Seleccione una opción: ");
         option = scanner.nextInt();
         scanner.nextLine(); 
@@ -40,12 +43,18 @@ public class BookView {
           deleteBook();
           break;
           case 5:
+          findBookByAuthor();
+          break;
+          case 6:
+          findBookByGenre();
+          break;
+          case 7:
           System.out.println("Saliendo del sistema...");
           break;
           default:
           System.out.println("Opción no válida, intente de nuevo.");
           }
-        } while (option != 5);
+        } while (option != 8);
         scanner.close();
     }
 
