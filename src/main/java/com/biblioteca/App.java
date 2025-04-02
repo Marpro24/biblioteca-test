@@ -17,7 +17,9 @@ public class App
         BookView bookView = new BookView(bookController);
 
         bookView.createBook();
-
+        bookView.findBookByTitle();
+        bookView.updateBook();
+        bookView.deleteBook();
         List<Book> books = bookController.getAllBooks();
         bookView.displayBooks(books);
 

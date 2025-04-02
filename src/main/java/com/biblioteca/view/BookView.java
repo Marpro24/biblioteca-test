@@ -33,6 +33,69 @@ public class BookView {
     
   }
 
+  public void updateBook(){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Ingresa el ID del libro que quieres actualizar:");
+    Integer id = scanner.nextInt();
+    scanner.nextLine();
+    System.out.println("Ingresa un nuevo titulo ");
+    String title = scanner.nextLine();
+    System.out.println("Ingresa un nuevo autor");
+    String author = scanner.nextLine();
+    System.out.println("Ingresa un nuevo ISBN");
+    Long isbn = scanner.nextLong();
+    scanner.nextLine();
+    System.out.println("Ingresa nueva descripción del libro");
+    String description = scanner.nextLine();
+    System.out.println("Ingresa un nuevo género");
+    String genre = scanner.nextLine();
+    Book book = new Book(title, genre, author, description, isbn );
+    book.setId(id);
+    bookController.updateBook(book);
+    scanner.close();
+    
+    }
+    
+
+  public void findBookByTitle(){
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Por favor, ingresa un título");
+    String title = scanner.nextLine();
+
+   List<Book> books = bookController.findBookByTitle(title);
+   
+   if (books.isEmpty()) {
+    System.out.println("No se encontraron resultados");
+    
+   } else {
+    System.out.println("Resultados: ");
+    for (Book book : books) {
+      
+      System.out.println("Título: " + book.getTitle());
+      System.out.println("Género: " + book.getGenre());
+      System.out.println("Autor: " + book.getAuthor()); 
+      System.out.println("Descripción: " + book.getDescription());
+      System.out.println("Isbn: " + book.getIsbn());
+    }
+   }
+
+    scanner.close();
+  }
+
+  public void deleteBook(){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Ingresa el id del libro a eliminar");
+    int id = scanner.nextInt();
+    if (id <= 0) {
+      System.out.println("El id no puede ser menor o igual a 0.");
+    }else{
+      bookController.deleteBook(id);
+    }
+    scanner.close();
+    
+  }
+
   public void displayBooks(List<Book> books) {
 
     if (books.isEmpty()) {

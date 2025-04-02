@@ -6,7 +6,7 @@ public class Book {
   private String genre;
   private String author;
   private String description;
-  private long isbn;
+  private Long isbn;
 
   public Book(String title, String genre, String author, String description, long isbn){
     this.title = title;
