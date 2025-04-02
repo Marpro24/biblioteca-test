@@ -31,4 +31,17 @@ public class BookView {
     scanner.close();
     
   }
+
+  public void deleteBook(){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Ingresa el id del libro a eliminar");
+    int id = scanner.nextInt();
+    if (id <= 0) {
+      System.out.println("El id no puede ser menor o igual a 0.");
+    }else{
+      bookController.deleteBook(id);
+    }
+    scanner.close();
+    
+  }
 }

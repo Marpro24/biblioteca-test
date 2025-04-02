@@ -14,5 +14,9 @@ public void createBook(Book book){
   bookDAO.createBook(book);
 }
 
+public void deleteBook(int id){ 
+  bookDAO.deleteBook(id);
+}
+
 
 }

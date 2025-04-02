@@ -28,4 +28,15 @@ public class BookDAO {
             System.out.println("Error al insertar el libro: " + e.getMessage());
         }
     }
+
+    public void deleteBook(int id) {
+      try {
+          String sql = "DELETE FROM Book WHERE id=" + id;
+          PreparedStatement stmn = connection.prepareStatement(sql);
+          stmn.executeUpdate();
+          System.out.println("Libro eliminado correctamente.");
+      } catch (SQLException e) {
+          System.out.println("Error al eliminar el libro: " + e.getMessage());
+      }
+    }
 }
