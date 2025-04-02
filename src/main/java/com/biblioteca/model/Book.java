@@ -16,7 +16,7 @@ public class Book {
     this.isbn = isbn;
 
   }
-// getters y setters para acceder a las propiedades
+
 
   public int getId() {
     return this.id;
