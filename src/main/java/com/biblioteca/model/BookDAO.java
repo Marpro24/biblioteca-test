@@ -23,8 +23,8 @@ public class BookDAO {
             stmn.setString(1, book.getTitle());
             stmn.setString(2, book.getGenre());
             stmn.setString(3, book.getAuthor());
-            stmn.setInt(4, book.getDescription());  
-            stmn.setString(5, book.getIsbn());  
+            stmn.setString(4, book.getDescription());  
+            stmn.setLong(5, book.getIsbn());  
 
             stmn.executeUpdate();
             System.out.println("Libro añadido correctamente.");
