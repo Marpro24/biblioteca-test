@@ -14,6 +14,7 @@ public class App
         BookView bookView = new BookView(bookController);
 
         bookView.createBook();
+        bookView.findBookByTitle();
 
         
     }
