@@ -27,4 +27,12 @@ public List<Book> findBookByTitle(String title){
 public void deleteBook(int id){ 
   bookDAO.deleteBook(id);
 }
+
+public List<Book> findBookByAuthor(String author){
+  return bookDAO.findBookByAuthor(author);
+}
+
+public List<Book> findBookByGenre(String genre){
+  return bookDAO.findBookByGenre(genre);
+}
 }

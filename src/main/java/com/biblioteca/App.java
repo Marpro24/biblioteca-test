@@ -17,6 +17,8 @@ public class App
         bookView.findBookByTitle();
         bookView.updateBook();
         bookView.deleteBook();
+        bookView.findBookByAuthor();
+        bookView.findBookByGenre();
         
     }
 }
