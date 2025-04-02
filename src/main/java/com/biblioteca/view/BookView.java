@@ -17,38 +17,46 @@ public class BookView {
     public void showMenu() {
       int option;
       do {
-        System.out.println("\n--- Menú Biblioteca ---");
-        System.out.println("1. Crear un libro");
-        System.out.println("2. Actualizar un libro");
-        System.out.println("3. Buscar un libro por título");
-        System.out.println("4. Eliminar un libro");
-        System.out.println("5. Salir");
-        System.out.print("Seleccione una opción: ");
-        option = scanner.nextInt();
-        scanner.nextLine(); 
+          System.out.println("\n--- Menú Biblioteca ---");
+          System.out.println("1. Crear un libro");
+          System.out.println("2. Actualizar un libro");
+          System.out.println("3. Buscar un libro por título");
+          System.out.println("4. Eliminar un libro");
+          System.out.println("5. Buscar un libro por autor");
+          System.out.println("6. Buscar un libro por género");
+          System.out.println("7. Salir");
+          System.out.print("Seleccione una opción: ");
+          option = scanner.nextInt();
+          scanner.nextLine();  
+          
           switch (option) {
-          case 1:
-          createBook();
-          break;
-          case 2:
-          updateBook();
-          break;
-          case 3:
-          findBookByTitle();
-          break;
-          case 4:
-          deleteBook();
-          break;
-          case 5:
-          System.out.println("Saliendo del sistema...");
-          break;
-          default:
-          System.out.println("Opción no válida, intente de nuevo.");
+              case 1:
+                  createBook();
+                  break;
+              case 2:
+                  updateBook();
+                  break;
+              case 3:
+                  findBookByTitle();
+                  break;
+              case 4:
+                  deleteBook();
+                  break;
+              case 5:
+                  findBookByAuthor();
+                  break;
+              case 6:
+                  findBookByGenre();
+                  break;
+              case 7:
+                  System.out.println("Saliendo del sistema...");
+                  break;
+              default:
+                  System.out.println("Opción no válida, intente de nuevo.");
           }
-        } while (option != 5);
-        scanner.close();
+      } while (option != 7); 
+      scanner.close();
     }
-
   
   public void createBook(){
     Scanner scanner = new Scanner(System.in);
@@ -132,5 +140,56 @@ public class BookView {
     }
     scanner.close();
     
+  }
+
+    public void findBookByAuthor(){
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Por favor, ingresa un autor");
+    String author = scanner.nextLine();
+
+   List<Book> books = bookController.findBookByAuthor(author);
+   
+   if (books.isEmpty()) {
+    System.out.println("No se encontraron resultados");
+    
+   } else {
+    System.out.println("Resultados: ");
+    for (Book book : books) {
+      
+      System.out.println("Título: " + book.getTitle());
+      System.out.println("Género: " + book.getGenre());
+      System.out.println("Autor: " + book.getAuthor()); 
+      System.out.println("Descripción: " + book.getDescription());
+      System.out.println("Isbn: " + book.getIsbn());
+    }
+   }
+
+    scanner.close();
+  }
+
+  public void findBookByGenre(){
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Por favor, ingresa un género");
+    String genre = scanner.nextLine();
+
+   List<Book> books = bookController.findBookByGenre(genre);
+   
+   if (books.isEmpty()) {
+    System.out.println("No se encontraron resultados");
+    
+   } else {
+    System.out.println("Resultados: ");
+    for (Book book : books) {
+      
+      System.out.println("Título: " + book.getTitle());
+      System.out.println("Género: " + book.getGenre());
+      System.out.println("Autor: " + book.getAuthor()); 
+      System.out.println("Isbn: " + book.getIsbn());
+    }
+   }
+
+    scanner.close();
   }
 }
