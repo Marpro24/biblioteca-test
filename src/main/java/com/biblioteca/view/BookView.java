@@ -121,4 +121,29 @@ public class BookView {
 
     scanner.close();
   }
+
+  public void findBookByGenre(){
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Por favor, ingresa un género");
+    String genre = scanner.nextLine();
+
+   List<Book> books = bookController.findBookByGenre(genre);
+   
+   if (books.isEmpty()) {
+    System.out.println("No se encontraron resultados");
+    
+   } else {
+    System.out.println("Resultados: ");
+    for (Book book : books) {
+      
+      System.out.println("Título: " + book.getTitle());
+      System.out.println("Género: " + book.getGenre());
+      System.out.println("Autor: " + book.getAuthor()); 
+      System.out.println("Isbn: " + book.getIsbn());
+    }
+   }
+
+    scanner.close();
+  }
 }

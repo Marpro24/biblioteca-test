@@ -13,11 +13,13 @@ public class App
         BookController bookController = new BookController(bookDAO);
         BookView bookView = new BookView(bookController);
 
+       /*  
         bookView.createBook();
         bookView.findBookByTitle();
         bookView.updateBook();
         bookView.deleteBook();
-        bookView.findBookByAuthor();
+        bookView.findBookByAuthor();*/
+        bookView.findBookByGenre();
         
     }
 }
