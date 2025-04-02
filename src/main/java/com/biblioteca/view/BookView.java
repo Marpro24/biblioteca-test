@@ -33,6 +33,30 @@ public class BookView {
     
   }
 
+  public void updateBook(){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Ingresa el ID del libro que quieres actualizar:");
+    Integer id = scanner.nextInt();
+    scanner.nextLine();
+    System.out.println("Ingresa un nuevo titulo ");
+    String title = scanner.nextLine();
+    System.out.println("Ingresa un nuevo autor");
+    String author = scanner.nextLine();
+    System.out.println("Ingresa un nuevo ISBN");
+    Long isbn = scanner.nextLong();
+    scanner.nextLine();
+    System.out.println("Ingresa nueva descripción del libro");
+    String description = scanner.nextLine();
+    System.out.println("Ingresa un nuevo género");
+    String genre = scanner.nextLine();
+    Book book = new Book(title, genre, author, description, isbn );
+    book.setId(id);
+    bookController.updateBook(book);
+    scanner.close();
+    
+    }
+    
+
   public void findBookByTitle(){
     Scanner scanner = new Scanner(System.in);
     

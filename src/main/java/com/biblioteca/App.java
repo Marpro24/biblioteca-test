@@ -15,7 +15,7 @@ public class App
 
         bookView.createBook();
         bookView.findBookByTitle();
-
+        bookView.updateBook();
         
     }
 }

@@ -16,8 +16,11 @@ public void createBook(Book book){
   bookDAO.createBook(book);
 }
 
+public void updateBook(Book book){
+  bookDAO.updateBook(book);
+  }
+
 public List<Book> findBookByTitle(String title){
   return bookDAO.findBookByTitle(title);
 }
-
 }
