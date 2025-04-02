@@ -2,6 +2,7 @@ package com.biblioteca.controller;
 
 import com.biblioteca.model.Book;
 import com.biblioteca.model.BookDAO;
+import java.util.List;
 
 public class BookController {
 private BookDAO bookDAO;
@@ -24,7 +25,9 @@ public List<Book> findBookByTitle(String title){
 
 public void deleteBook(int id){ 
   bookDAO.deleteBook(id);
-}public List<Book> getAllBooks() {
+}
+
+public List<Book> getAllBooks() {
   return bookDAO.getAllBooks();
 }
 }
