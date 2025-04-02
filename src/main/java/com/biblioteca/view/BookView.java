@@ -1,4 +1,5 @@
 package com.biblioteca.view;
+import java.util.List;
 import java.util.Scanner;
 
 import com.biblioteca.controller.BookController;
@@ -28,4 +29,29 @@ public class BookView {
     scanner.close();
     
   }
+
+  public void displayBooks(List<Book> books) {
+
+    /*if (books.isEmpty()) {
+      System.out.println("There are no books yet.");
+      
+  } else {*/
+    for (Book book : books) {
+      System.out.println("ID: " + book.getId());
+      System.out.println("Title: " + book.getTitle());
+      System.out.println("Author: " + book.getAuthor());
+      System.out.println("Description: " + book.getDescription());
+      System.out.println("Genre: " + book.getGenre());
+      System.out.println("ISBN: " + book.getIsbn());
+      System.out.println("------------------");
+    }
+
+  
+    
+  }
+
+
+
+
+
 }

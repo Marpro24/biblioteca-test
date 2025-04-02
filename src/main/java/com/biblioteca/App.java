@@ -1,5 +1,7 @@
 package com.biblioteca;
 
+import java.util.List;
+
 import com.biblioteca.controller.BookController;
 import com.biblioteca.model.Book;
 import com.biblioteca.model.BookDAO;
@@ -40,6 +42,10 @@ public class App
 
         bookView.createBook();
 
+        List<Book> books = bookController.getAllBooks();
+        bookView.displayBooks(books);
+
+       
         
     }
 }

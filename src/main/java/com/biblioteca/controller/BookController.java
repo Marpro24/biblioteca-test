@@ -2,6 +2,7 @@ package com.biblioteca.controller;
 
 import com.biblioteca.model.Book;
 import com.biblioteca.model.BookDAO;
+import java.util.List;
 
 public class BookController {
   //el controlador tiene que llamar al modelo para poder conectarse a la base de datos y el modelo me tiene que devolver la respuesta de la bs para yo (?) pasarsela a la vista 
@@ -19,5 +20,7 @@ public void createBook(Book book){
   bookDAO.createBook(book);
 }
 
-
+public List<Book> getAllBooks() {
+  return bookDAO.getAllBooks();
+}
 }
