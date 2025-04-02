@@ -6,9 +6,9 @@ public class Book {
   private String genre;
   private String author;
   private String description;
-  private int isbn;
+  private long isbn;
 
-  public Book(String title, String genre, String author, String description, int isbn){
+  public Book(String title, String genre, String author, String description, long isbn){
     this.title = title;
     this.author = author;
     this.genre = genre;
@@ -58,11 +58,11 @@ public class Book {
     this.description = description;
   }
 
-  public int getIsbn() {
+  public long getIsbn() {
     return this.isbn;
   }
 
-  public void setIsbn(int isbn) {
+  public void setIsbn(long isbn) {
     this.isbn = isbn;
   }
 

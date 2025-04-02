@@ -2,9 +2,9 @@ package com.biblioteca.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +28,7 @@ public class BookDAO {
             stmn.setString(1, book.getTitle());
             stmn.setString(2, book.getAuthor());
             stmn.setString(3, book.getDescription());
-            stmn.setInt(4, book.getIsbn());  
+            stmn.setLong(4, book.getIsbn());  
             stmn.setString(5, book.getGenre());  
 
             stmn.executeUpdate();
@@ -40,7 +40,7 @@ public class BookDAO {
 
     public List<Book> getAllBooks() {
     List<Book> books = new ArrayList<>();
-    String query = "SELECT * FROM public.book";
+    String query = "SELECT * FROM book";
 
   try (Statement statement = connection.createStatement()) {
   ResultSet resultSet = statement.executeQuery(query);
@@ -50,7 +50,7 @@ public class BookDAO {
     String author = (resultSet.getString("author"));
     String genre= (resultSet.getString("genre"));
     String description = (resultSet.getString("description"));
-    int isbn = (resultSet.getInt("isbn"));
+    long isbn = (resultSet.getLong("isbn"));
 
     Book book = new Book(title, author, genre, description, isbn);
     book.setId(resultSet.getInt("id"));

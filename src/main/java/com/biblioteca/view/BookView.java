@@ -39,7 +39,7 @@ public class BookView {
       System.out.println("There are no books yet.");
       
   } else {
-    for (Book book : books) {
+    books.forEach(book -> {
       System.out.println("ID: " + book.getId());
       System.out.println("Title: " + book.getTitle());
       System.out.println("Author: " + book.getAuthor());
@@ -47,7 +47,7 @@ public class BookView {
       System.out.println("Genre: " + book.getGenre());
       System.out.println("ISBN: " + book.getIsbn());
       System.out.println("------------------");
-    }
+    });
     
   }
   }
