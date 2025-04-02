@@ -1,5 +1,7 @@
 package com.biblioteca.controller;
 
+import java.util.List;
+
 import com.biblioteca.model.Book;
 import com.biblioteca.model.BookDAO;
 
@@ -14,9 +16,15 @@ public void createBook(Book book){
   bookDAO.createBook(book);
 }
 
+public void updateBook(Book book){
+  bookDAO.updateBook(book);
+  }
+
+public List<Book> findBookByTitle(String title){
+  return bookDAO.findBookByTitle(title);
+}
+
 public void deleteBook(int id){ 
   bookDAO.deleteBook(id);
 }
-
-
 }
