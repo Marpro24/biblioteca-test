@@ -64,7 +64,7 @@ public class BookView {
             scanner.next();
         }
         isbn = scanner.nextLong();
-        scanner.nextLine(); // Limpia el buffer
+        scanner.nextLine(); 
 
         System.out.println("Ingresa descripción del libro:");
         String description = scanner.nextLine();
