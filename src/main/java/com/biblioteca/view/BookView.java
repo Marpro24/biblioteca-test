@@ -30,10 +30,10 @@ public class BookView {
 
             if (scanner.hasNextInt()) {
                 option = scanner.nextInt();
-                scanner.nextLine(); // Limpia el buffer
+                scanner.nextLine();
             } else {
                 System.out.println("Por favor, ingrese un número válido.");
-                scanner.nextLine(); // Descarta entrada inválida
+                scanner.nextLine();
                 continue;
             }
 
