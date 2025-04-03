@@ -6,11 +6,11 @@ Este proyecto implementa un sistema CRUD (Crear, Leer, Actualizar, Eliminar) par
 
 ## Tecnologías Utilizadas
 
-Java: Lenguaje de programación principal del proyecto.
+Java v. 21: Lenguaje de programación principal del proyecto.
 
 Maven: Sistema de gestión de dependencias y construcción del proyecto.
 
-PostgreSQL: Base de datos relacional utilizada para almacenar la información de los libros.
+PostgreSQL 42.7.5: Base de datos relacional utilizada para almacenar la información de los libros.
 
 JDBC: Para la conexión entre Java y PostgreSQL.
 
