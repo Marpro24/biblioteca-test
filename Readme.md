@@ -89,7 +89,7 @@ El usuario puede ingresar la opción deseada y seguir las instrucciones en la te
 [Marta Ibarra](https://github.com/Marpro24)
 [Milena Okoro](https://github.com/MilenaOcoro)
 [Mariuxi Olaya](https://github.com/catmaluci)
-[Tetiana Vaschenko ](https://github.com/Tetiana-BCN)
+[Tetiana Vashchenko ](https://github.com/Tetiana-BCN)
 [Karisha Meléndez](https://github.com/karisssha)
 
 ![gif](https://i.giphy.com/qJFNKmwkglLZPPOHd7.webp)

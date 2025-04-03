@@ -1,9 +1,13 @@
 package com.biblioteca.view;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
+
 import com.biblioteca.controller.BookController;
 import com.biblioteca.model.Book;
+
+
 
 public class BookView {
     private BookController bookController;
@@ -13,6 +17,8 @@ public class BookView {
         this.bookController = bookController;
         this.scanner = new Scanner(System.in);
     }
+
+
 
     public void showMenu() {
       int option;
@@ -24,7 +30,8 @@ public class BookView {
           System.out.println("4. Eliminar un libro");
           System.out.println("5. Buscar un libro por autor");
           System.out.println("6. Buscar un libro por género");
-          System.out.println("7. Salir");
+          System.out.println("7. Demostrar todos los libros");
+          System.out.println("8. Salir");
           System.out.print("Seleccione una opción: ");
           option = scanner.nextInt();
           scanner.nextLine();  
@@ -49,12 +56,15 @@ public class BookView {
                   findBookByGenre();
                   break;
               case 7:
-                  System.out.println("Saliendo del sistema...");
+                  displayBooks(bookController.getAllBooks());
                   break;
+              case 8:
+              System.out.println("Saliendo del sistema...");    
+              break;
               default:
                   System.out.println("Opción no válida, intente de nuevo.");
           }
-      } while (option != 7); 
+      } while (option != 8); 
       scanner.close();
     }
   
@@ -142,28 +152,7 @@ public class BookView {
     
   }
 
-<<<<<<< HEAD
-  public void displayBooks(List<Book> books) {
-
-    if (books.isEmpty()) {
-      System.out.println("There are no books yet.");
-      
-  } else {
-    books.forEach(book -> {
-      System.out.println("ID: " + book.getId());
-      System.out.println("Title: " + book.getTitle());
-      System.out.println("Author: " + book.getAuthor());
-      System.out.println("Description: " + book.getDescription());
-      System.out.println("Genre: " + book.getGenre());
-      System.out.println("ISBN: " + book.getIsbn());
-      System.out.println("------------------");
-    });
-    
-  }
-  }
-
-}
-=======
+  
     public void findBookByAuthor(){
     Scanner scanner = new Scanner(System.in);
     
@@ -214,5 +203,23 @@ public class BookView {
 
     scanner.close();
   }
+
+  public void displayBooks(List<Book> books) {
+
+    if (books.isEmpty()) {
+      System.out.println("Todavía no hay libros en la base.");
+      
+  } else {
+    books.forEach(book -> {
+      System.out.println("ID: " + book.getId());
+      System.out.println("Título: " + book.getTitle());
+      System.out.println("Géner: " + book.getGenre());
+      System.out.println("Autor: " + book.getAuthor());
+      System.out.println("Descripción: " + book.getDescription());
+      System.out.println("ISBN: " + book.getIsbn());
+      System.out.println("------------------");
+    });
+    
+  }
+  }
 }
->>>>>>> dev

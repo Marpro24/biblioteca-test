@@ -2,7 +2,11 @@ package com.biblioteca.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.biblioteca.config.DBManager;
 
@@ -179,12 +183,12 @@ public class BookDAO {
   while (resultSet.next()) {
     
     String title = (resultSet.getString("title"));
-    String author = (resultSet.getString("author"));
     String genre= (resultSet.getString("genre"));
+    String author = (resultSet.getString("author"));
     String description = (resultSet.getString("description"));
     long isbn = (resultSet.getLong("isbn"));
 
-    Book book = new Book(title, author, genre, description, isbn);
+    Book book = new Book(title, genre, author, description, isbn);
     book.setId(resultSet.getInt("id"));
     books.add(book);
   }
